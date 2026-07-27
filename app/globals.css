@@ -3,7 +3,7 @@
 :root {
   --background: #050505;
   --foreground: #ffffff;
-  --blue: #0066ff;
+  --blue: #2563EB;
 }
 
 html {
@@ -21,13 +21,27 @@ h2,
 h3,
 h4 {
   font-family: var(--font-geist);
+  letter-spacing: -0.05em;
 }
 
 ::selection {
-  background: #0066ff;
+  background: #2563EB;
   color: white;
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2563EB;
+  border-radius: 10px;
+}
+
 section {
-  scroll-margin-top: 100px;
+  scroll-margin-top: 120px;
 }
