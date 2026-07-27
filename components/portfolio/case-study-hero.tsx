@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Project } from "@/types/project";
+import { urlFor } from "@/lib/sanity-image";
 
 type Props = {
   project: Project;
@@ -56,13 +57,17 @@ export default function CaseStudyHero({
         <div className="relative mt-20 overflow-hidden rounded-[32px] border border-white/10">
 
           <Image
-            src={project.image}
+            src={
+              project.coverImage
+                ? urlFor(project.coverImage).width(1600).height(900).url()
+                : project.images?.[0]
+                  ? urlFor(project.images[0]).width(1600).height(900).url()
+                  : "/placeholder.jpg"
+            }
             alt={project.title}
             width={1600}
             height={900}
-            className="w-full transition duration-700 hover:scale-105"
           />
-
         </div>
 
       </div>
