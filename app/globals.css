@@ -1,5 +1,51 @@
 @import "tailwindcss";
 
+
+@theme {
+  --color-ink: #0A0A0B;
+  /* never pure black */
+  --color-surface: #121215;
+  --color-raised: #17171C;
+  --color-hair: rgba(255, 255, 255, .09);
+  --color-hair-strong: rgba(255, 255, 255, .16);
+  --color-fg: #EDEDEF;
+  --color-muted: #A2A2AB;
+  /* 7.1:1 on ink - your labels live here, not gray-500 */
+  --color-faint: #7C7C86;
+  /* decorative only, never body copy */
+  --color-lumina: #F0B429;
+  /* signature accent */
+  --color-steel: #4E82E8;
+  /* links only, used sparingly */
+  --font-display: var(--font-sora), ui-sans-serif, system-ui;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui;
+  --font-serif: var(--font-instrument), ui-serif, Georgia;
+  --radius-card: 14px;
+  --radius-frame: 20px;
+  --radius-chip: 999px;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+}
+
+body {
+  background: var(--color-ink);
+  color: var(--color-fg);
+}
+
+/* film grain - the difference between flat dark and expensive dark */
+.grain::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: .035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
 :root {
   --background: #050505;
   --foreground: #ffffff;
