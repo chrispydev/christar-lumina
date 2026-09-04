@@ -48,10 +48,6 @@ export const projectQuery = groq`
         url
       }
     },
-    overview,
-    challenge,
-    solution,
-    results,
     client,
     year,
     duration,

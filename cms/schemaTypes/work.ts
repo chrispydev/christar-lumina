@@ -87,44 +87,6 @@ export const workType = defineType({
     }),
 
     defineField({
-      name: 'overview',
-      title: 'Project Overview',
-      type: 'text',
-      rows: 5,
-    }),
-
-    defineField({
-      name: 'challenge',
-      title: 'Challenge',
-      type: 'text',
-      rows: 5,
-    }),
-
-    defineField({
-      name: 'solution',
-      title: 'Solution',
-      type: 'text',
-      rows: 5,
-    }),
-
-    defineField({
-      name: 'results',
-      title: 'Results',
-      type: 'text',
-      rows: 5,
-    }),
-
-    defineField({
-      name: 'services',
-      title: 'Services Provided',
-      type: 'array',
-      of: [{type: 'string'}],
-      options: {
-        layout: 'tags',
-      },
-    }),
-
-    defineField({
       name: 'technologies',
       title: 'Technologies',
       type: 'array',
