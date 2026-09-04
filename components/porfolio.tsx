@@ -61,6 +61,8 @@ function ProjectCard({
   const extra = (project.technologies?.length ?? 0) - stack.length;
   const span = SPANS[index % SPANS.length];
 
+  console.log(stack)
+
   return (
     <motion.article
       layout
@@ -146,9 +148,9 @@ function ProjectCard({
 
           {stack.length > 0 && (
             <div className="mt-4 flex flex-wrap items-center gap-1.5">
-              {stack.map((technology) => (
+              {stack.map((technology, index) => (
                 <span
-                  key={technology}
+                  key={index}
                   className="rounded-full border border-white/10 bg-white/[.04] px-2.5 py-1 text-[11.5px] text-white/55"
                 >
                   {technology}

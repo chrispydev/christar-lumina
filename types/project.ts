@@ -9,12 +9,13 @@ export interface SanityImage {
   caption?: string;
 }
 
-export interface Technology {
-  _key?: string;
-  name: string;
-  icon?: string;
-  category?: "frontend" | "backend" | "database" | "devops" | "design";
-}
+
+// export interface Technology {
+//   _key?: string;
+//   name: string;
+//   icon?: string;
+//   category?: "frontend" | "backend" | "database" | "devops" | "design";
+// }
 
 export interface Metric {
   label: string;
@@ -53,7 +54,7 @@ export interface Project {
   challenge?: string;
   solution?: string;
   results?: string;
-  technologies?: Technology[];
+  technologies?: string[];
   services?: string[];
   testimonial?: Testimonial;
   metrics?: Metric[];
