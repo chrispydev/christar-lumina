@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 const technologies = [
   "Next.js",
   "React",
+  "Nuxt.js",
+  "Vue",
   "TypeScript",
   "Python",
   "Django",

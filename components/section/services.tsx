@@ -19,6 +19,8 @@ const services = [
     technologies: [
       "Next.js",
       "React",
+      "Nuxt.js",
+      "Vue",
       "TypeScript",
       "Node.js",
     ],
