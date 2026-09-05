@@ -4,6 +4,7 @@ import { PortableText } from "@portabletext/react";
 import { client } from "@/lib/sanity";
 import { projectQuery } from "@/lib/queries";
 import { urlFor } from "@/lib/sanity-image";
+import Link from "next/link";
 
 type Asset = {
   _id?: string;
@@ -91,7 +92,7 @@ function Frame({
         <i className="size-2 rounded-full bg-white/15" />
         <i className="size-2 rounded-full bg-white/15" />
       </div>
-      <div className="aspect-[16/10]">
+      <div className="aspect-16/10">
         <Image
           src={src}
           alt={alt}
@@ -210,13 +211,13 @@ export default async function ProjectPage({ params }: Props) {
     <main className="bg-[#030303] text-white">
       {/* BACKGROUND */}
       <div aria-hidden className="pointer-events-none fixed inset-0 overflow-hidden">
-        <div className="absolute left-1/2 top-[-300px] h-[760px] w-[1080px] -translate-x-1/2 bg-[radial-gradient(50%_50%_at_50%_50%,rgba(37,99,235,.13),transparent_70%)]" />
-        <div className="absolute bottom-[-220px] right-[-160px] h-[680px] w-[680px] bg-[radial-gradient(50%_50%_at_50%_50%,rgba(37,99,235,.08),transparent_70%)]" />
+        <div className="absolute left-1/2 -top-75 h-190 w-270 -translate-x-1/2 bg-[radial-gradient(50%_50%_at_50%_50%,rgba(37,99,235,.13),transparent_70%)]" />
+        <div className="absolute -bottom-55 -right-40 h-170 w-170 bg-[radial-gradient(50%_50%_at_50%_50%,rgba(37,99,235,.08),transparent_70%)]" />
       </div>
 
       {/* HERO */}
       <header className="relative px-6 pb-14 pt-32 md:pt-40">
-        <div className="mx-auto max-w-[1160px]">
+        <div className="mx-auto max-w-290">
           <div className="grid items-end gap-10 lg:grid-cols-[minmax(0,1fr)_290px]">
             <div>
               {project.category && (
@@ -288,7 +289,7 @@ export default async function ProjectPage({ params }: Props) {
                       {project.technologies.map((technology) => (
                         <li
                           key={technology}
-                          className="rounded-full border border-blue-500/25 bg-blue-500/[.10] px-3 py-1 text-[12.5px] text-blue-200"
+                          className="rounded-full border border-blue-500/25 bg-blue-500/10 px-3 py-1 text-[12.5px] text-blue-200"
                         >
                           {technology}
                         </li>
@@ -327,7 +328,7 @@ export default async function ProjectPage({ params }: Props) {
           id="details"
           className="scroll-mt-28 border-t border-white/10 py-16"
         >
-          <div className="mx-auto grid max-w-[1160px] gap-x-20 gap-y-8 px-6 lg:grid-cols-[260px_1fr]">
+          <div className="mx-auto grid max-w-290 gap-x-20 gap-y-8 px-6 lg:grid-cols-[260px_1fr]">
             <div className="lg:sticky lg:top-28 lg:self-start">
               <p className="text-[12px] uppercase tracking-[0.16em] text-blue-400">
                 01 &mdash; Project details
@@ -347,9 +348,9 @@ export default async function ProjectPage({ params }: Props) {
       {gallery.length > 0 ? (
         <section
           aria-labelledby="showcase"
-          className="border-y border-white/10 bg-white/[.02] py-20"
+          className="border-y border-white/10 bg-white/2 py-20"
         >
-          <div className="mx-auto max-w-[1160px] px-6">
+          <div className="mx-auto max-w-290 px-6">
             <div className="mb-12 flex flex-wrap items-end justify-between gap-4">
               <div>
                 <p className="text-[12px] uppercase tracking-[0.16em] text-blue-400">
@@ -386,7 +387,7 @@ export default async function ProjectPage({ params }: Props) {
 
       {/* CTA */}
       <section className="px-6 py-24">
-        <div className="relative mx-auto max-w-[1000px] overflow-hidden rounded-[20px] border border-white/10 bg-white/[.04] p-10 text-center md:p-16">
+        <div className="relative mx-auto max-w-250 overflow-hidden rounded-[20px] border border-white/10 bg-white/4 p-10 text-center md:p-16">
           <div
             aria-hidden
             className="absolute inset-x-[-20%] bottom-[-70%] h-[120%] bg-[radial-gradient(50%_50%_at_50%_50%,rgba(37,99,235,.16),transparent_70%)]"
@@ -398,12 +399,12 @@ export default async function ProjectPage({ params }: Props) {
             I build modern websites, web applications and digital solutions for
             businesses.
           </p>
-          <a
+          <Link
             href="/#contact"
             className="relative mt-10 inline-block rounded-full bg-blue-600 px-8 py-4 font-semibold transition hover:bg-blue-500"
           >
             Start a Project
-          </a>
+          </Link>
         </div>
       </section>
     </main>
